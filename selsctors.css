@@ -1,0 +1,26 @@
+h1 {
+color: rgb(202, 114, 114);
+}
+h1#search {
+color: green;
+background-color: yellow;
+}
+h1.social{
+color: indigo;
+background-color: violet;
+}
+p#fbpara {
+background-color: yellowgreen;
+font-size: 20px;
+}
+span.gnu {
+    font-size: 24px;
+    background-color: aqua;
+
+}
+span.free {
+
+    font-size: 24px;
+    background-color: black;
+    color: white;
+}

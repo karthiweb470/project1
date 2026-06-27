@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIP Services</title>
+
+<style>
+    
+    /* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+
+/* HEADER */
+.header{
+  width:100%;
+  background:#111;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.navbar{
+  max-width:1400px;
+  margin:auto;
+  padding:18px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+/* LOGO */
+.logo{
+  text-decoration:none;
+  font-size:2rem;
+  font-weight:700;
+  color:#ff9800;
+  letter-spacing:1px;
+}
+
+.logo span{
+  color:#fff;
+  font-weight:300;
+}
+
+        /* NAV LINKS */
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:35px;
+  list-style:none;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#fff;
+  font-size:15px;
+  position:relative;
+  transition:0.3s;
+}
+
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background:#ff3c00;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#ff9800;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#0a0a0a;
+    color:#fff;
+    padding:60px 8%;
+}
+
+/* TITLE */
+
+.title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.title h1{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.title h1 span{
+    color:#ff9800;
+}
+
+.title p{
+    color:#bdbdbd;
+    font-size:18px;
+}
+
+/* GRID */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+/* CARD */
+
+.service-card{
+    background:#151515;
+    padding:40px 30px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.06);
+    transition:0.3s;
+    position:relative;
+    overflow:hidden;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    border-color:#ff9800;
+    box-shadow:0 0 30px rgba(255,152,0,0.15);
+}
+
+.service-card::before{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    background:rgba(255,152,0,0.08);
+    border-radius:50%;
+    top:-40px;
+    right:-40px;
+}
+
+/* ICON */
+
+.icon{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+/* TEXT */
+
+.service-card h2{
+    color:#ff9800;
+    margin-bottom:15px;
+    font-size:28px;
+}
+
+.service-card p{
+    color:#bbb;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+/* BUTTON */
+
+.btn{
+    display:inline-block;
+    padding:12px 28px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#ff9800,#ff5e00);
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+    box-shadow:0 0 20px rgba(255,152,0,0.3);
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 30px rgba(255,152,0,0.6);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .title h1{
+        font-size:42px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+    <!-- Logo -->
+    <a href="#" class="logo">Auto<span>Parts</span></a>
+
+     <!-- Navigation -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="premium club.html">Home</a></li>
+      
+    </ul>
+
+
+<div class="title">
+
+    <h1>VIP <span>Services</span></h1>
+
+    <p>
+        Unlock premium experiences, elite support,
+        luxury upgrades, and exclusive member benefits.
+    </p>
+
+</div>
+
+<div class="services-grid">
+
+    <!-- CARD 1 -->
+
+    <div class="service-card">
+
+        <div class="icon">👑</div>
+
+        <h2>VIP Membership</h2>
+
+        <p>
+            Join our elite membership program and enjoy
+            exclusive rewards, priority access,
+            and premium customer experiences.
+        </p>
+
+        <a href="#" class="btn">
+            Join Now
+        </a>
+
+    </div>
+
+    <!-- CARD 2 -->
+
+    <div class="service-card">
+
+        <div class="icon">⚡</div>
+
+        <h2>Priority Support</h2>
+
+        <p>
+            Get 24/7 fast-response support with
+            dedicated premium assistance
+            for all VIP members.
+        </p>
+
+        <a href="#" class="btn">
+            Learn More
+        </a>
+
+    </div>
+
+    <!-- CARD 3 -->
+
+    <div class="service-card">
+
+        <div class="icon">🔥</div>
+
+        <h2>Exclusive Deals</h2>
+
+        <p>
+            Access member-only discounts,
+            luxury offers, and premium
+            VIP promotional packages.
+        </p>
+
+        <a href="#" class="btn">
+            View Deals
+        </a>
+
+    </div>
+
+    <!-- CARD 4 -->
+
+    <div class="service-card">
+
+        <div class="icon">🚀</div>
+
+        <h2>Premium Upgrades</h2>
+
+        <p>
+            Unlock advanced features,
+            luxury upgrades, and elite
+            premium service options.
+        </p>
+
+        <a href="#" class="btn">
+            Upgrade
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

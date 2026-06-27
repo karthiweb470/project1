@@ -1,0 +1,16 @@
+
+body {
+background-color:gray;
+font-family: serif;
+}
+
+h1{
+color:black;
+background-color:white;
+text-align: center;
+}
+p{
+    color: rgb(0, 0, 0);
+    font-size: 22px;
+    text-align: var(22px);
+}

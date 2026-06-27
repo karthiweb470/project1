@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Payment Section</title>
+
+  <style>
+    
+    /* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+
+/* HEADER */
+.header{
+  width:100%;
+  background:#111;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.navbar{
+  max-width:1400px;
+  margin:auto;
+  padding:18px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+/* LOGO */
+.logo{
+  text-decoration:none;
+  font-size:2rem;
+  font-weight:700;
+  color:#ff3c00;
+  letter-spacing:1px;
+}
+
+.logo span{
+  color:#fff;
+  font-weight:300;
+}
+    
+/* NAV LINKS */
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:35px;
+  list-style:none;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#fff;
+  font-size:15px;
+  position:relative;
+  transition:0.3s;
+}
+
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background:#ff3c00;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#ff3c00;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#0f0f0f;
+      color:#fff;
+      padding:50px;
+    }
+
+    .payment-section{
+      max-width:1100px;
+      margin:auto;
+      background:#111;
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid #2a2a2a;
+      display:flex;
+      flex-wrap:wrap;
+    }
+
+    /* Left Side */
+    .payment-info{
+      flex:1;
+      min-width:320px;
+      padding:40px;
+      background:#151515;
+      border-right:1px solid #222;
+    }
+
+    .payment-info h1{
+      font-size:38px;
+      margin-bottom:15px;
+    }
+
+    .payment-info p{
+      color:#aaa;
+      line-height:1.7;
+      margin-bottom:30px;
+    }
+
+    .payment-methods{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+      margin-bottom:30px;
+    }
+
+    .method{
+      background:#1f1f1f;
+      padding:14px 20px;
+      border-radius:12px;
+      border:1px solid #2d2d2d;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .method:hover{
+      border-color:#ff3c00;
+      transform:translateY(-5px);
+    }
+
+    .method span{
+      font-size:15px;
+      font-weight:bold;
+      color:#fff;
+    }
+
+    .secure-box{
+      background:#1a1a1a;
+      padding:20px;
+      border-radius:14px;
+      border:1px solid #2a2a2a;
+    }
+
+    .secure-box h3{
+      color:#ff3c00;
+      margin-bottom:10px;
+    }
+
+    .secure-box p{
+      color:#bbb;
+      font-size:14px;
+      margin:0;
+    }
+
+    /* Right Side */
+    .payment-form{
+      flex:1;
+      min-width:320px;
+      padding:40px;
+    }
+
+    .payment-form h2{
+      font-size:30px;
+      margin-bottom:25px;
+    }
+
+    .input-group{
+      margin-bottom:20px;
+    }
+
+    .input-group label{
+      display:block;
+      margin-bottom:8px;
+      color:#ccc;
+      font-size:14px;
+    }
+
+    .input-group input{
+      width:100%;
+      padding:15px;
+      border:none;
+      outline:none;
+      border-radius:10px;
+      background:#1a1a1a;
+      border:1px solid #333;
+      color:#fff;
+      transition:0.3s;
+    }
+
+    .input-group input:focus{
+      border-color:#ff3c00;
+    }
+
+    .row{
+      display:flex;
+      gap:15px;
+    }
+
+    .row .input-group{
+      flex:1;
+    }
+
+    .pay-btn{
+      width:100%;
+      padding:16px;
+      border:none;
+      background:#ff3c00;
+      color:#fff;
+      border-radius:12px;
+      font-size:17px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .pay-btn:hover{
+      background:#ff5e2b;
+    }
+
+    @media(max-width:768px){
+
+      body{
+        padding:20px;
+      }
+
+      .payment-section{
+        flex-direction:column;
+      }
+
+      .payment-info{
+        border-right:none;
+        border-bottom:1px solid #222;
+      }
+
+      .row{
+        flex-direction:column;
+      }
+    }
+ /* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0d0d0d;
+}
+
+/* HEADER */
+.header{
+  width:100%;
+  background:#111;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.navbar{
+  max-width:1400px;
+  margin:auto;
+  padding:18px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+/* LOGO */
+.logo{
+  text-decoration:none;
+  font-size:2rem;
+  font-weight:700;
+  color:#ff3c00;
+  letter-spacing:1px;
+}
+
+.logo span{
+  color:#fff;
+  font-weight:300;
+}
+
+/* NAV LINKS */
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:35px;
+  list-style:none;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#fff;
+  font-size:15px;
+  position:relative;
+  transition:0.3s;
+}
+
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background:#ff3c00;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#ff3c00;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+/* SEARCH */
+.search-box{
+  flex:1;
+  max-width:420px;
+  display:flex;
+  align-items:center;
+  background:#1a1a1a;
+  border-radius:50px;
+  overflow:hidden;
+  border:1px solid transparent;
+  transition:0.3s;
+}
+
+.search-box:focus-within{
+  border-color:#ff3c00;
+  box-shadow:0 0 10px rgba(255,60,0,0.3);
+}
+
+.search-box input{
+  width:100%;
+  padding:12px 18px;
+  border:none;
+  outline:none;
+  background:transparent;
+  color:#fff;
+  font-size:14px;
+}
+
+.search-box button{
+  border:none;
+  background:transparent;
+  color:#ff3c00;
+  padding:0 18px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+/* ACTIONS */
+.actions{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.actions a{
+  color:#fff;
+  font-size:18px;
+  transition:0.3s;
+}
+
+.actions a:hover{
+  color:#ff3c00;
+}
+
+.shop-btn{
+  padding:10px 22px;
+  border:none;
+  border-radius:30px;
+  background:#ff3c00;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.shop-btn:hover{
+  background:#ff5a26;
+  transform:translateY(-2px);
+}
+
+/* MOBILE MENU */
+.menu-toggle{
+  display:none;
+  color:#fff;
+  font-size:24px;
+  cursor:pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+
+  .navbar{
+    flex-wrap:wrap;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav-links{
+    width:100%;
+    flex-direction:column;
+    align-items:flex-start;
+    background:#151515;
+    padding:20px;
+    border-radius:12px;
+    display:none;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .search-box{
+    order:3;
+    width:100%;
+    max-width:100%;
+  }
+
+  .actions{
+    margin-left:auto;
+  }
+}
+
+@media(max-width:600px){
+
+  .logo{
+    font-size:1.6rem;
+  }
+
+  .shop-btn{
+    display:none;
+  }
+}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+  </style>
+</head>
+<body>
+   <header class="header">
+  <nav class="navbar">
+
+    <!-- Logo -->
+    <a href="#" class="logo">Auto<span>Parts</span></a>
+
+    <!-- Mobile Menu Button -->
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <!-- Navigation -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="pro1.html">Home</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact .html">Contact</a></li>
+      <li><a href="payment.html">payment</a></li>
+      <li><a href="Services .html">Services</a></li>
+      <li><a href="premium club.html">premium</a></li>
+    </ul>
+
+    <!-- Search -->
+    <div class="search-box">
+      <input type="text" placeholder="Search auto parts..." />
+      <button>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+
+   
+  </nav>
+</header>
+
+
+  <section class="payment-section">
+
+    <!-- Left Info -->
+    <div class="payment-info">
+
+      <h1>Secure Payment</h1>
+
+      <p>
+        Complete your purchase safely using our secure payment system.
+        We support multiple payment methods for quick and easy checkout.
+      </p>
+
+      <div class="payment-methods">
+
+        <div class="method">
+          <span>💳 Visa</span>
+        </div>
+
+        <div class="method">
+          <span>💳 MasterCard</span>
+        </div>
+
+        <div class="method">
+          <span>🅿 PayPal</span>
+        </div>
+
+        <div class="method">
+          <span>📱 UPI</span>
+        </div>
+        <div class="method">
+          <span>$ Cash on Delivery</span>
+        </div>
+
+      </div>
+
+      <div class="secure-box">
+        <h3>🔒 100% Secure Checkout</h3>
+        <p>
+          Your payment information is encrypted and protected with advanced security systems.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Payment Form -->
+    <div class="payment-form">
+
+      <h2>Payment Details</h2>
+
+      <form>
+
+        <div class="input-group">
+          <label>Card Holder Name</label>
+          <input type="text" placeholder="John Doe">
+        </div>
+
+        <div class="input-group">
+          <label>Card Number</label>
+          <input type="text" placeholder="1234 5678 9012 3456">
+        </div>
+
+        <div class="row">
+
+          <div class="input-group">
+            <label>Expiry Date</label>
+            <input type="text" placeholder="MM/YY">
+          </div>
+
+          <div class="input-group">
+            <label>CVV</label>
+            <input type="password" placeholder="***">
+          </div>
+
+        </div>
+
+        <div class="input-group">
+          <label>Billing Address</label>
+          <input type="text" placeholder="Enter Address">
+        </div>
+
+        <button class="pay-btn">
+          Pay Now
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+</body>
+</html>

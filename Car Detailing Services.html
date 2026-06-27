@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Engine Repair Service</title>
+
+  <style>
+    
+    /* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+
+/* HEADER */
+.header{
+  width:100%;
+  background:#111;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.navbar{
+  max-width:1400px;
+  margin:auto;
+  padding:18px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+/* LOGO */
+.logo{
+  text-decoration:none;
+  font-size:2rem;
+  font-weight:700;
+  color:#ff3c00;
+  letter-spacing:1px;
+}
+
+.logo span{
+  color:#fff;
+  font-weight:300;
+}
+
+    /* NAV LINKS */
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:35px;
+  list-style:none;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#fff;
+  font-size:15px;
+  position:relative;
+  transition:0.3s;
+}
+
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background:#ff3c00;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#ff3c00;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#0f0f0f;
+      color:#fff;
+      line-height:1.6;
+    }
+
+    /* HERO SECTION */
+
+    .hero{
+      height:90vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+      url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1400&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero-content h1{
+      font-size:60px;
+      margin-bottom:20px;
+      color:#ff3c00;
+    }
+
+    .hero-content p{
+      max-width:700px;
+      margin:auto;
+      color:#ddd;
+      font-size:18px;
+      margin-bottom:30px;
+    }
+
+    .hero-btn{
+      display:inline-block;
+      padding:15px 35px;
+      background:#ff3c00;
+      color:#fff;
+      text-decoration:none;
+      border-radius:10px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .hero-btn:hover{
+      background:#ff5e2b;
+    }
+
+    /* DETAILS SECTION */
+
+    .details{
+      padding:80px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:42px;
+      margin-bottom:50px;
+    }
+
+    .details-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .detail-card{
+      background:#161616;
+      padding:30px;
+      border-radius:18px;
+      border:1px solid #2a2a2a;
+      transition:0.3s;
+    }
+
+    .detail-card:hover{
+      transform:translateY(-8px);
+      border-color:#ff3c00;
+      box-shadow:0 10px 25px rgba(255,60,0,0.25);
+    }
+
+    .detail-card h2{
+      color:#ff3c00;
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .detail-card p{
+      color:#bbb;
+      font-size:15px;
+      line-height:1.8;
+    }
+
+    /* PROCESS SECTION */
+
+    .process{
+      padding:80px 10%;
+      background:#111;
+    }
+
+    .process-container{
+      display:flex;
+      gap:25px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .process-box{
+      flex:1;
+      min-width:220px;
+      background:#1a1a1a;
+      padding:30px;
+      border-radius:18px;
+      text-align:center;
+      border:1px solid #2a2a2a;
+      transition:0.3s;
+    }
+
+    .process-box:hover{
+      border-color:#ff3c00;
+      transform:translateY(-8px);
+    }
+
+    .step{
+      width:60px;
+      height:60px;
+      background:#ff3c00;
+      margin:auto;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      font-weight:bold;
+      margin-bottom:20px;
+    }
+
+    .process-box h3{
+      margin-bottom:15px;
+      font-size:22px;
+    }
+
+    .process-box p{
+      color:#aaa;
+    }
+
+    /* PRICE SECTION */
+
+    .pricing{
+      padding:80px 10%;
+      text-align:center;
+    }
+
+    .price-card{
+      max-width:450px;
+      margin:auto;
+      background:#161616;
+      padding:40px;
+      border-radius:20px;
+      border:1px solid #2a2a2a;
+    }
+
+    .price-card h2{
+      font-size:32px;
+      margin-bottom:15px;
+    }
+
+    .price{
+      font-size:55px;
+      color:#ff3c00;
+      margin-bottom:20px;
+      font-weight:bold;
+    }
+
+    .price-card ul{
+      list-style:none;
+      margin-bottom:30px;
+    }
+
+    .price-card ul li{
+      padding:12px 0;
+      color:#bbb;
+      border-bottom:1px solid #222;
+    }
+
+    .price-btn{
+      display:inline-block;
+      padding:15px 35px;
+      background:#ff3c00;
+      color:#fff;
+      text-decoration:none;
+      border-radius:10px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .price-btn:hover{
+      background:#ff5e2b;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .hero-content h1{
+        font-size:42px;
+      }
+
+      .section-title{
+        font-size:32px;
+      }
+
+      .hero{
+        height:auto;
+        padding:100px 20px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  
+    <!-- Logo -->
+    <a href="#" class="logo">Auto<span>Parts</span></a>
+  
+   <!-- Navigation -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="Services .html">Home</a></li>
+      
+    </ul>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>Engine Repair Services</h1>
+
+      <p>
+        Professional engine diagnostics, repair, maintenance,
+        and complete engine rebuilding services for all vehicle brands.
+      </p>
+
+      <a href="#" class="hero-btn">
+        Book Service
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- DETAILS -->
+
+  <section class="details">
+
+    <h1 class="section-title">
+      What We Offer
+    </h1>
+
+    <div class="details-container">
+
+      <div class="detail-card">
+        <h2>Engine Diagnostics</h2>
+
+        <p>
+          Advanced computer diagnostics to identify engine problems quickly and accurately.
+        </p>
+      </div>
+
+      <div class="detail-card">
+        <h2>Engine Rebuild</h2>
+
+        <p>
+          Complete engine rebuilding services using premium quality replacement parts.
+        </p>
+      </div>
+
+      <div class="detail-card">
+        <h2>Oil Leak Repair</h2>
+
+        <p>
+          Professional repair solutions for engine oil leaks and damaged seals.
+        </p>
+      </div>
+
+      <div class="detail-card">
+        <h2>Performance Tuning</h2>
+
+        <p>
+          Improve engine efficiency, horsepower, and fuel economy with expert tuning.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROCESS -->
+
+  <section class="process">
+
+    <h1 class="section-title">
+      Our Repair Process
+    </h1>
+
+    <div class="process-container">
+
+      <div class="process-box">
+
+        <div class="step">1</div>
+
+        <h3>Inspection</h3>
+
+        <p>
+          Complete engine inspection and advanced diagnostics.
+        </p>
+
+      </div>
+
+      <div class="process-box">
+
+        <div class="step">2</div>
+
+        <h3>Repair</h3>
+
+        <p>
+          Replace damaged engine parts with high-quality components.
+        </p>
+
+      </div>
+
+      <div class="process-box">
+
+        <div class="step">3</div>
+
+        <h3>Testing</h3>
+
+        <p>
+          Thorough engine testing to ensure perfect performance.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PRICING -->
+
+  <section class="pricing">
+
+    <h1 class="section-title">
+      Service Pricing
+    </h1>
+
+    <div class="price-card">
+
+      <h2>Basic Engine Repair</h2>
+
+      <div class="price">
+        $299
+      </div>
+
+      <ul>
+        <li>✔ Engine Diagnostics</li>
+        <li>✔ Oil Leak Inspection</li>
+        <li>✔ Performance Testing</li>
+        <li>✔ Expert Consultation</li>
+      </ul>
+
+      <a href="paym.html" class="price-btn">
+        Get Started
+      </a>
+
+    </div>
+
+  </section>
+
+</body>
+</html>

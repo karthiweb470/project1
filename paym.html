@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Payment Section</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#0f0f0f;
+      color:#fff;
+      padding:60px 8%;
+    }
+
+    .payment-section{
+      max-width:1200px;
+      margin:auto;
+      background:#161616;
+      border-radius:25px;
+      overflow:hidden;
+      border:1px solid #2a2a2a;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+    }
+
+    /* LEFT SIDE */
+
+    .payment-left{
+      padding:50px;
+      background:#111;
+      border-right:1px solid #222;
+    }
+
+    .payment-subtitle{
+      color:#ff3c00;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      margin-bottom:15px;
+      font-size:16px;
+    }
+
+    .payment-title{
+      font-size:42px;
+      margin-bottom:20px;
+      line-height:1.2;
+    }
+
+    .payment-text{
+      color:#aaa;
+      margin-bottom:35px;
+      line-height:1.8;
+    }
+
+    .service-list{
+      display:flex;
+      flex-direction:column;
+      gap:15px;
+    }
+
+    .service-item{
+      background:#1b1b1b;
+      padding:18px 20px;
+      border-radius:14px;
+      border:1px solid #2a2a2a;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      transition:0.3s;
+    }
+
+    .service-item:hover{
+      border-color:#ff3c00;
+      transform:translateX(5px);
+    }
+
+    .service-name{
+      font-size:17px;
+      font-weight:bold;
+    }
+
+    .service-price{
+      color:#ff3c00;
+      font-weight:bold;
+      font-size:18px;
+    }
+
+    /* RIGHT SIDE */
+
+    .payment-right{
+      padding:50px;
+    }
+
+    .payment-form h2{
+      font-size:32px;
+      margin-bottom:30px;
+    }
+
+    .input-group{
+      margin-bottom:20px;
+    }
+
+    .input-group label{
+      display:block;
+      margin-bottom:8px;
+      color:#ccc;
+      font-size:14px;
+    }
+
+    .input-group input,
+    .input-group select{
+      width:100%;
+      padding:15px;
+      background:#111;
+      border:1px solid #333;
+      border-radius:12px;
+      color:#fff;
+      outline:none;
+      transition:0.3s;
+    }
+
+    .input-group input:focus,
+    .input-group select:focus{
+      border-color:#ff3c00;
+    }
+
+    .row{
+      display:flex;
+      gap:15px;
+    }
+
+    .row .input-group{
+      flex:1;
+    }
+
+    .payment-methods{
+      display:flex;
+      gap:12px;
+      margin-bottom:25px;
+      flex-wrap:wrap;
+    }
+
+    .method{
+      background:#1b1b1b;
+      padding:12px 18px;
+      border-radius:10px;
+      border:1px solid #2a2a2a;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .method:hover{
+      border-color:#ff3c00;
+    }
+
+    .pay-btn{
+      width:100%;
+      padding:16px;
+      border:none;
+      border-radius:12px;
+      background:#ff3c00;
+      color:#fff;
+      font-size:17px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .pay-btn:hover{
+      background:#ff5e2b;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      .payment-section{
+        grid-template-columns:1fr;
+      }
+
+      .payment-left{
+        border-right:none;
+        border-bottom:1px solid #222;
+      }
+    }
+
+    @media(max-width:768px){
+
+      body{
+        padding:30px 5%;
+      }
+
+      .payment-title{
+        font-size:32px;
+      }
+
+      .row{
+        flex-direction:column;
+      }
+
+      .payment-left,
+      .payment-right{
+        padding:35px 25px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <section class="payment-section">
+
+    <!-- LEFT -->
+
+    <div class="payment-left">
+
+      <div class="payment-subtitle">
+        Service Checkout
+      </div>
+
+      <h1 class="payment-title">
+        Complete Your Service Payment
+      </h1>
+
+      <p class="payment-text">
+        Securely pay for your selected auto repair and maintenance services
+        using our fast and protected payment system.
+      </p>
+
+      <div class="service-list">
+
+        <div class="service-item">
+          <span class="service-name">🔧 Engine Repair</span>
+          <span class="service-price">$299</span>
+        </div>
+
+        <div class="service-item">
+          <span class="service-name">🚗 Car Detailing</span>
+          <span class="service-price">$149</span>
+        </div>
+
+        <div class="service-item">
+          <span class="service-name">🛞 Tire Replacement</span>
+          <span class="service-price">$199</span>
+        </div>
+
+        <div class="service-item">
+          <span class="service-name">🔋 Battery Service</span>
+          <span class="service-price">$89</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="payment-right">
+
+      <form class="payment-form">
+
+        <h2>Payment Details</h2>
+
+        <div class="input-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter Your Name">
+        </div>
+
+        <div class="input-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="Enter Your Email">
+        </div>
+
+        <div class="input-group">
+          <label>Select Service</label>
+
+          <select>
+            <option>Engine Repair</option>
+            <option>Car Detailing</option>
+            <option>Tire Replacement</option>
+            <option>Battery Service</option>
+          </select>
+        </div>
+
+        <div class="payment-methods">
+
+          <div class="method">💳 Visa</div>
+          <div class="method">💳 MasterCard</div>
+          <div class="method">🅿 PayPal</div>
+          <div class="method">📱 UPI</div>
+
+        </div>
+
+        <div class="input-group">
+          <label>Card Number</label>
+          <input type="text" placeholder="1234 5678 9012 3456">
+        </div>
+
+        <div class="row">
+
+          <div class="input-group">
+            <label>Expiry Date</label>
+            <input type="text" placeholder="MM/YY">
+          </div>
+
+          <div class="input-group">
+            <label>CVV</label>
+            <input type="password" placeholder="***">
+          </div>
+
+        </div>
+
+        <button class="pay-btn">
+          Confirm Payment
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+</body>
+</html>

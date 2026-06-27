@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Auto Parts - Contact Us</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#ffa90a;
+    --secondary:#ffa90a;
+    --dark:#070707;
+    --card:#111111;
+    --card-light:#181818;
+    --text:#ffffff;
+    --muted:#a8a8a8;
+    --border:rgba(255,255,255,.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:var(--dark);
+    color:var(--text);
+}
+
+/* =======================
+   CONTACT SECTION
+======================= */
+
+.contact-section{
+    position:relative;
+    padding:120px 8%;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at top right,
+    rgba(255,107,0,.18),
+    transparent 35%),
+
+    radial-gradient(circle at bottom left,
+    rgba(255,107,0,.12),
+    transparent 40%),
+
+    #080808;
+}
+
+.contact-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size:50px 50px;
+}
+
+.container{
+    max-width:1450px;
+    margin:auto;
+    position:relative;
+    z-index:1;
+}
+
+/* =======================
+   HEADER
+======================= */
+
+.contact-header{
+    text-align:center;
+    margin-bottom:90px;
+}
+
+.badge{
+    display:inline-block;
+    color:var(--primary);
+    border:1px solid rgba(255,107,0,.3);
+    padding:10px 22px;
+    border-radius:50px;
+    font-size:13px;
+    letter-spacing:2px;
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+.contact-header h1{
+    font-size:clamp(3rem,6vw,5rem);
+    margin-bottom:20px;
+    line-height:1.1;
+}
+
+.contact-header h1 span{
+    color:var(--primary);
+}
+
+.contact-header p{
+    max-width:850px;
+    margin:auto;
+    color:var(--muted);
+    line-height:1.9;
+    font-size:18px;
+}
+
+/* =======================
+   MAIN GRID
+======================= */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:420px 1fr;
+    gap:35px;
+}
+
+/* =======================
+   INFO CARDS
+======================= */
+
+.info-column{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.info-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:30px;
+    border-radius:25px;
+    transition:.4s;
+}
+
+.info-card:hover{
+    border-color:var(--primary);
+    transform:translateY(-8px);
+}
+
+.icon{
+    width:65px;
+    height:65px;
+    border-radius:18px;
+    background:rgba(255,107,0,.15);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.info-card h3{
+    margin-bottom:12px;
+}
+
+.info-card p{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+/* =======================
+   CONTACT FORM
+======================= */
+
+.contact-form{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:35px;
+    padding:50px;
+}
+
+.form-header{
+    margin-bottom:35px;
+}
+
+.form-header h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.form-header p{
+    color:var(--muted);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.form-group{
+    margin-bottom:5px;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:18px 20px;
+    border:none;
+    outline:none;
+    background:var(--card-light);
+    border:1px solid transparent;
+    border-radius:16px;
+    color:white;
+    font-size:15px;
+    transition:.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:var(--primary);
+}
+
+textarea{
+    min-height:180px;
+    resize:none;
+}
+
+.submit-btn{
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+    );
+    border:none;
+    color:white;
+    padding:18px 35px;
+    border-radius:50px;
+    cursor:pointer;
+    font-weight:700;
+    font-size:16px;
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(255,107,0,.35);
+}
+
+/* =======================
+   DEPARTMENTS
+======================= */
+
+.departments{
+    margin-top:100px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:3rem;
+}
+
+.section-title p{
+    color:var(--muted);
+    margin-top:15px;
+}
+
+.department-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.department-card{
+    background:var(--card);
+    padding:35px;
+    border-radius:25px;
+    border:1px solid var(--border);
+    transition:.4s;
+}
+
+.department-card:hover{
+    transform:translateY(-10px);
+    border-color:var(--primary);
+}
+
+.department-card h3{
+    margin:20px 0 12px;
+}
+
+.department-card p{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+/* =======================
+   BUSINESS HOURS
+======================= */
+
+.hours{
+    margin-top:100px;
+}
+
+.hours-box{
+    background:var(--card);
+    border-radius:30px;
+    border:1px solid var(--border);
+    padding:50px;
+}
+
+.hours-box h2{
+    margin-bottom:35px;
+}
+
+.hours-row{
+    display:flex;
+    justify-content:space-between;
+    padding:18px 0;
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.hours-row:last-child{
+    border:none;
+}
+
+.hours-row span:last-child{
+    color:var(--primary);
+}
+
+/* =======================
+   STATS
+======================= */
+
+.stats{
+    margin-top:100px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.stat{
+    background:var(--card);
+    padding:40px;
+    text-align:center;
+    border-radius:25px;
+    border:1px solid var(--border);
+}
+
+.stat h2{
+    color:var(--primary);
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.stat p{
+    color:var(--muted);
+}
+
+/* =======================
+   FAQ
+======================= */
+
+.faq{
+    margin-top:100px;
+}
+
+.faq-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.faq-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:30px;
+    border-radius:25px;
+}
+
+.faq-card h3{
+    margin-bottom:12px;
+}
+
+.faq-card p{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+/* =======================
+   CTA
+======================= */
+
+.cta{
+    margin-top:100px;
+    background:
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+    );
+
+    text-align:center;
+    padding:70px;
+    border-radius:35px;
+}
+
+.cta h2{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.cta p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.cta a{
+    display:inline-block;
+    text-decoration:none;
+    background:white;
+    color:black;
+    padding:16px 35px;
+    border-radius:50px;
+    font-weight:700;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+
+@media(max-width:1200px){
+
+.contact-grid,
+.department-grid,
+.stats{
+    grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media(max-width:900px){
+
+.contact-grid,
+.department-grid,
+.stats,
+.faq-grid{
+    grid-template-columns:1fr;
+}
+
+.form-grid{
+    grid-template-columns:1fr;
+}
+
+.contact-form{
+    padding:35px;
+}
+
+.hours-row{
+    flex-direction:column;
+    gap:10px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<section class="contact-section">
+
+<div class="container">
+
+<div class="contact-header">
+    <span class="badge">CONTACT AUTO EXPERTS</span>
+
+    <h1>
+        Need Genuine
+        <span>Auto Parts?</span>
+    </h1>
+
+    <p>
+        Contact our automotive specialists for OEM parts,
+        performance upgrades, accessories, warranty support,
+        technical guidance, and bulk orders.
+    </p>
+</div>
+
+<div class="contact-grid">
+
+    <div class="info-column">
+
+        <div class="info-card">
+            <div class="icon">📍</div>
+            <h3>Store Location</h3>
+            <p>
+                245 Automotive Avenue<br>
+                Industrial District<br>
+                New York, USA
+            </p>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">📞</div>
+            <h3>Call Us</h3>
+            <p>
+                +1 (800) 555-2025<br>
+                Mon - Sat : 8:00 AM - 8:00 PM
+            </p>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">✉️</div>
+            <h3>Email Support</h3>
+            <p>
+                sales@autoparts.com<br>
+                support@autoparts.com
+            </p>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">🚚</div>
+            <h3>Fast Shipping</h3>
+            <p>
+                Nationwide delivery with
+                real-time order tracking.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="contact-form">
+
+        <div class="form-header">
+            <h2>Send Inquiry</h2>
+            <p>Tell us which auto parts or services you need.</p>
+        </div>
+
+        <form>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name">
+                </div>
+
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address">
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" placeholder="Vehicle Model">
+                </div>
+
+                <div class="form-group full">
+                    <select>
+                        <option>Select Department</option>
+                        <option>Sales</option>
+                        <option>Parts</option>
+                        <option>Warranty</option>
+                        <option>Technical Support</option>
+                    </select>
+                </div>
+
+                <div class="form-group full">
+                    <input type="text" placeholder="Part Name / Product Requirement">
+                </div>
+
+                <div class="form-group full">
+                    <textarea placeholder="Describe your requirement..."></textarea>
+                </div>
+
+                <div class="form-group full">
+                    <button class="submit-btn">
+                        Send Message →
+                    </button>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- DEPARTMENTS -->
+
+<div class="departments">
+
+<div class="section-title">
+    <h2>Our Departments</h2>
+    <p>Reach the right team for faster assistance.</p>
+</div>
+
+<div class="department-grid">
+
+    <div class="department-card">
+        <h3>🚗 Sales Team</h3>
+        <p>Product inquiries, quotations and bulk orders.</p>
+    </div>
+
+    <div class="department-card">
+        <h3>🛠 Parts Department</h3>
+        <p>Find OEM and aftermarket replacement parts.</p>
+    </div>
+
+    <div class="department-card">
+        <h3>⚡ Technical Support</h3>
+        <p>Installation guidance and compatibility checks.</p>
+    </div>
+
+    <div class="department-card">
+        <h3>🛡 Warranty Team</h3>
+        <p>Warranty claims and replacement assistance.</p>
+    </div>
+
+</div>
+
+</div>
+
+<!-- BUSINESS HOURS -->
+
+<div class="hours">
+
+<div class="hours-box">
+
+<h2>Business Hours</h2>
+
+<div class="hours-row">
+    <span>Monday</span>
+    <span>08:00 AM - 08:00 PM</span>
+</div>
+
+<div class="hours-row">
+    <span>Tuesday</span>
+    <span>08:00 AM - 08:00 PM</span>
+</div>
+
+<div class="hours-row">
+    <span>Wednesday</span>
+    <span>08:00 AM - 08:00 PM</span>
+</div>
+
+<div class="hours-row">
+    <span>Thursday</span>
+    <span>08:00 AM - 08:00 PM</span>
+</div>
+
+<div class="hours-row">
+    <span>Friday</span>
+    <span>08:00 AM - 08:00 PM</span>
+</div>
+
+<div class="hours-row">
+    <span>Saturday</span>
+    <span>09:00 AM - 05:00 PM</span>
+</div>
+
+<div class="hours-row">
+    <span>Sunday</span>
+    <span>Closed</span>
+</div>
+
+</div>
+
+</div>
+
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="stat">
+    <h2>50K+</h2>
+    <p>Customers Served</p>
+</div>
+
+<div class="stat">
+    <h2>10K+</h2>
+    <p>Auto Parts</p>
+</div>
+
+<div class="stat">
+    <h2>250+</h2>
+    <p>Partner Brands</p>
+</div>
+
+<div class="stat">
+    <h2>15+</h2>
+    <p>Years Experience</p>
+</div>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="faq">
+
+<div class="section-title">
+    <h2>Frequently Asked Questions</h2>
+</div>
+
+<div class="faq-grid">
+
+<div class="faq-card">
+    <h3>Do you sell genuine OEM parts?</h3>
+    <p>Yes, we supply genuine OEM and premium aftermarket parts.</p>
+</div>
+
+<div class="faq-card">
+    <h3>Can you help identify parts?</h3>
+    <p>Yes, provide your vehicle details and our team will assist.</p>
+</div>
+
+<div class="faq-card">
+    <h3>Do you offer shipping?</h3>
+    <p>We provide nationwide shipping with tracking.</p>
+</div>
+
+<div class="faq-card">
+    <h3>What payment methods are accepted?</h3>
+    <p>Credit cards, bank transfers, and online payments.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- CTA -->
+
+<div class="cta">
+
+<h2>Ready To Find The Right Auto Part?</h2>
+
+<p>
+Connect with our automotive specialists today and
+get the best parts, expert support, and fast delivery.
+</p>
+
+<a href="#">Contact Our Team</a>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>

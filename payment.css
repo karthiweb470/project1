@@ -1,0 +1,138 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body{
+  background:#0f172a;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  padding:20px;
+}
+
+.payment-section{
+  width:100%;
+  max-width:700px;
+}
+
+.payment-container{
+  background:#111827;
+  border:1px solid #1f2937;
+  border-radius:24px;
+  padding:30px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+
+.payment-header{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.payment-header h2{
+  color:#fff;
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.payment-header p{
+  color:#9ca3af;
+  font-size:15px;
+}
+
+.payment-methods{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.payment-btn{
+  width:100%;
+  background:#1f2937;
+  border:2px solid transparent;
+  border-radius:18px;
+  padding:18px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  cursor:pointer;
+  transition:0.3s ease;
+  color:#fff;
+}
+
+.payment-btn:hover{
+  border-color:#f97316;
+  transform:translateY(-3px);
+  background:#273449;
+}
+
+.payment-btn.active{
+  border-color:#f97316;
+  background:rgba(249,115,22,0.12);
+}
+
+.icon{
+  width:60px;
+  height:60px;
+  background:#0f172a;
+  border-radius:16px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:28px;
+  margin-right:18px;
+}
+
+.details{
+  flex:1;
+  text-align:left;
+}
+
+.details h3{
+  font-size:18px;
+  margin-bottom:5px;
+}
+
+.details p{
+  color:#9ca3af;
+  font-size:14px;
+}
+
+.check{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:#374151;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.payment-btn.active .check{
+  background:#f97316;
+  color:#fff;
+}
+
+.checkout-btn{
+  width:100%;
+  margin-top:30px;
+  padding:18px;
+  border:none;
+  border-radius:18px;
+  background:linear-gradient(135deg,#f97316,#ea580c);
+  color:#fff;
+  font-size:18px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.checkout-btn:hover{
+  transform:scale(1.02);
+  opacity:0.95;
+}
